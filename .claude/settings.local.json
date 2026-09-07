@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -c \"text-3xs\" dist/assets/index-DZCvRMk-.css)",
+      "Bash(grep -c \"animate-fadeIn\\\\|\\\\.animate-fadeIn\" dist/assets/index-DZCvRMk-.css)",
+      "Bash(grep -c \"bg-radial-at-b\" dist/assets/index-DZCvRMk-.css)",
+      "Bash(npx tsc *)",
+      "Bash(echo \"\\(exit: $?\\)\")",
+      "Bash(echo \"exit=$?\")",
+      "Bash(echo \"code de sortie tsc = $?\")",
+      "Read(//tmp/**)",
+      "Bash(rm -rf dist)",
+      "Bash(npx vite *)",
+      "Bash(node \"C:/Users/SOLUTI~1/AppData/Local/Temp/claude/C--Users-Public-FirmeARC-SiteWeb-pour-la-firme-axis-result-consulting/7d9ef197-b38d-4d62-b66e-38df45cba10d/scratchpad/audit-classes.mjs\" .)",
+      "Bash(awk '{print \"  \"$9\" — \"$5}')",
+      "Bash(node -e ' *)",
+      "Bash(sed -i 's#<h4 #<p #g; s#</h4>#</p>#g' src/App.tsx)",
+      "Bash(sed -i 's#<h4 #<h3 #g; s#</h4>#</h3>#g' src/components/MethodologyView.tsx)",
+      "Bash(sed -i 's#<h3 #<h2 #g; s#</h3>#</h2>#g; s#<h4 #<h3 #g; s#</h4>#</h3>#g' src/components/DashboardView.tsx)",
+      "Bash(sed -i 's#<h4 #<h3 #g; s#</h4>#</h3>#g' src/components/AboutView.tsx)",
+      "Bash(sed -i 's#<h4 #<h3 #g; s#</h4>#</h3>#g' src/components/ServicesView.tsx)"
+    ]
+  }
+}
