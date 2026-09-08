@@ -3,6 +3,8 @@
 Site vitrine de la firme Axis Result Consulting (Port-au-Prince, Haïti).
 React 19 + TypeScript + Vite 6 + Tailwind CSS 4.
 
+Description : site vitrine professionnel pour Axis Result Consulting, firme de conseil basee a Port-au-Prince, Haiti. L'application presente les services, la methodologie d'intervention et un espace de cadrage de projet.
+
 ## Prérequis
 
 - Node.js 20 ou plus
