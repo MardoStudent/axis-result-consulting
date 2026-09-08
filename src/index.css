@@ -1,0 +1,110 @@
+/* Les polices Google sont chargées depuis index.html (preconnect + link),
+   ce qui évite la cascade de requêtes bloquantes d'un @import CSS. */
+@import "tailwindcss";
+
+@theme {
+  --color-brand-navy: #081A2E;
+  --color-brand-light: #F5F7FA;
+  --color-brand-cyan: #00B8D9;
+  --color-brand-green: #2ED573;
+  --color-brand-gray: #AAB4C0;
+
+  /* Variantes « texte » assombries pour respecter le contraste WCAG AA (≥ 4.5:1)
+     SUR FOND CLAIR (blanc / brand-light). Les couleurs vives ci-dessus restent
+     réservées aux fonds pleins, bordures, icônes, et aux textes posés sur navy
+     (où le vif atteint déjà 7:1+). À n'utiliser que pour du texte sur clair.
+       cyan-text  #007489 → 5.44:1   green-text #178040 → 5.00:1
+       gray-text  #595E66 → 6.53:1 */
+  --color-brand-cyan-text: #007489;
+  --color-brand-green-text: #178040;
+  --color-brand-gray-text: #595E66;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Échelle typographique sous `text-xs` (0.75rem).
+     Ces classes étaient utilisées partout dans les composants sans jamais
+     être déclarées : Tailwind ne générait donc aucune règle et les libellés
+     héritaient de la taille du parent. */
+  --text-2xs: 0.6875rem;        /* 11px */
+  --text-2xs--line-height: 1rem;
+  --text-3xs: 0.625rem;         /* 10px */
+  --text-3xs--line-height: 0.875rem;
+  --text-4xs: 0.5625rem;        /* 9px */
+  --text-4xs--line-height: 0.75rem;
+
+  /* Ombre plus légère que `shadow-2xs`, utilisée sur les cartes Kanban. */
+  --shadow-3xs: 0 1px 1px rgb(8 26 46 / 0.03);
+
+  /* Transition d'entrée des vues et des panneaux dépliants. */
+  --animate-fadeIn: fadeIn 0.35s ease-out both;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* Respect de la préférence système : pas d'animation d'entrée si l'utilisateur
+   a demandé une réduction des mouvements. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fadeIn {
+    animation: none;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-brand-light text-brand-navy font-sans antialiased selection:bg-brand-cyan/30 selection:text-brand-navy;
+  }
+
+  /* Accessibilité clavier : de nombreux éléments utilisent `focus:outline-hidden`
+     (outline retiré au focus souris). On rétablit un anneau NET pour la navigation
+     clavier via :focus-visible, qui ne s'active pas au clic souris — donc sans
+     bruit visuel pour les utilisateurs à la souris. */
+  :focus-visible {
+    outline: 2px solid var(--color-brand-cyan);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+/* Custom modern scrollbar for professional look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f3f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c9d2;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aab4c0;
+}
+
+/* Animations and glassmorphism helpers */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(8, 26, 46, 0.06);
+}
+
+.dark-glass-panel {
+  background: rgba(8, 26, 46, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
