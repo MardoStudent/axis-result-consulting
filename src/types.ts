@@ -87,30 +87,32 @@ export interface SimulatedProject {
 }
 
 // STATIC DATA
+// Équipe réelle d'Axis. NB : « Joseph Mardochée » est déduit — confirme
+// l'orthographe et le nom affiché ; complète le nom de famille de Hervens.
 export const CO_FOUNDERS: CoFounder[] = [
   {
     id: 'founder-1',
-    name: 'Co-fondateur A',
-    role: 'Co-fondateur & Directeur Associé - Advisory & Stratégie',
-    bio: 'Plus de 15 ans d\'expérience en planification stratégique et diagnostics organisationnels pour les PME et institutions en Haïti. Expert en gouvernance et accompagnement au changement.',
-    specialties: ['Planification Stratégique', 'Diagnostics Organisationnels', 'Management de Transition'],
-    initials: 'CA'
+    name: 'Joseph Mardochée',
+    role: 'Fondateur — Vision & Direction',
+    bio: "Donne le ton et la direction d'Axis : cadrage stratégique des missions, exigence de résultats et cohérence de l'ensemble.",
+    specialties: ['Vision & Stratégie', 'Direction des missions', 'Orientation résultats'],
+    initials: 'JM'
   },
   {
     id: 'founder-2',
-    name: 'Co-fondateur B',
-    role: 'Co-fondateur & Directeur Associé - Opérations & PMO',
-    bio: 'Ingénieur de formation spécialisé dans la gestion de projets complexes, le déploiement opérationnel et le contrôle de conformité. Expert en mise en œuvre de méthodologies Agile et Prince2.',
-    specialties: ['Fonctions PMO', 'Suivi-Évaluation', 'Gestion des Risques'],
-    initials: 'CB'
+    name: 'Antoine Ismann',
+    role: 'Garant du Cadre & de la Méthodologie',
+    bio: "Veille à ce que le cadre méthodologique soit respecté à chaque étape : rigueur, conformité et qualité des livrables.",
+    specialties: ['Rigueur méthodologique', 'Conformité', 'Contrôle qualité'],
+    initials: 'AI'
   },
   {
     id: 'founder-3',
-    name: 'Co-fondateur C',
-    role: 'Co-fondateur & Directeur Associé - Digital & Capital Humain',
-    bio: 'Expert en transformation technologique des entreprises et ingénierie de la formation. Conçoit des dispositifs de renforcement des capacités et de structuration des données.',
-    specialties: ['Transformation Numérique', 'L&D (Learning & Development)', 'Modélisation des Processus'],
-    initials: 'CC'
+    name: 'Hervens',
+    role: 'Marketing & Image de Marque',
+    bio: "Façonne l'image, le récit et le positionnement de marque d'Axis comme de ceux qu'elle accompagne.",
+    specialties: ['Marketing', 'Branding', 'Communication'],
+    initials: 'H'
   }
 ];
 

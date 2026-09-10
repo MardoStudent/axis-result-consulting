@@ -56,6 +56,26 @@ export default function AboutView() {
         </p>
       </div>
 
+      {/* Pourquoi Axis — la conviction fondatrice */}
+      <section className="max-w-4xl mx-auto space-y-6" id="about-why" aria-labelledby="about-why-heading">
+        <div className="text-center space-y-2">
+          <span className="text-brand-cyan-text font-bold text-xs tracking-widest uppercase block">Notre raison d'être</span>
+          <h2 id="about-why-heading" className="font-display font-extrabold text-3xl text-brand-navy uppercase tracking-tight">Pourquoi Axis existe</h2>
+        </div>
+
+        <div className="bg-white rounded-3xl border-l-4 border-brand-cyan border-y border-r border-brand-gray/15 p-8 sm:p-10 shadow-xs space-y-5 text-left">
+          <p className="text-sm sm:text-base text-brand-navy/80 leading-relaxed">
+            Le monde évolue à grande vitesse vers le numérique, et beaucoup d'entreprises peinent à suivre le rythme. Axis est né d'un constat simple : trop d'organisations haïtiennes (PME, institutions, initiatives citoyennes) ont des idées justes mais butent, faute de structure et d'outils adaptés au terrain réel. Pas le terrain des manuels : celui des coupures de courant, des zones sans réseau, des équipes à former.
+          </p>
+          <p className="text-sm sm:text-base text-brand-navy/80 leading-relaxed">
+            Nous avons créé Axis pour apporter une rigueur de niveau international qui tient debout dans ces conditions, et pour transférer les compétences afin que les solutions restent quand nous partons.
+          </p>
+          <p className="text-base sm:text-lg text-brand-navy font-bold leading-relaxed border-l-4 border-brand-cyan pl-4 italic">
+            Ce qui nous motive : l'autonomie de nos clients, jamais leur dépendance. C'est pourquoi nous travaillons corps et âme, pour la transformation numérique comme pour le développement des communautés.
+          </p>
+        </div>
+      </section>
+
       {/* Mission & Vision Bento */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8" id="mission-vision-bento">
         {/* Mission Card */}
@@ -139,10 +159,10 @@ export default function AboutView() {
 
         <div className="relative z-10 space-y-12">
           <div className="max-w-2xl space-y-3">
-            <span className="text-brand-cyan font-bold text-xs tracking-widest uppercase block">Gouvernance par Projet</span>
-            <h2 className="font-display font-extrabold text-3xl sm:text-4xl uppercase tracking-tight">Les Co-fondateurs</h2>
+            <span className="text-brand-cyan font-bold text-xs tracking-widest uppercase block">Les femmes et hommes derrière Axis</span>
+            <h2 className="font-display font-extrabold text-3xl sm:text-4xl uppercase tracking-tight">L'Équipe</h2>
             <p className="text-white/70 text-xs sm:text-sm">
-              L'organisation repose sur un Comité de coordination composé de trois associés complémentaires qui pilotent chaque mission directement sur le terrain.
+              Un noyau resserré et complémentaire : une direction qui donne le ton, un garant du cadre méthodologique et une expertise marque — appuyés par un spécialiste externe des marchés internationaux.
             </p>
           </div>
 
@@ -183,13 +203,17 @@ export default function AboutView() {
             ))}
           </div>
 
-          <div className="bg-white/5 p-6 rounded-2xl border border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4" id="governance-framework-info">
-            <div className="flex items-center gap-3">
-              <div className="p-3 bg-brand-cyan/20 rounded-xl text-brand-cyan">
-                <Shield className="h-5 w-5" />
+          <div className="bg-white/5 p-6 rounded-2xl border border-white/5 flex flex-col sm:flex-row items-center gap-5" id="governance-framework-info">
+            <div className="h-14 w-14 rounded-2xl bg-brand-cyan text-brand-navy font-display font-extrabold text-lg flex items-center justify-center flex-shrink-0 shadow-xs">
+              MJ
+            </div>
+            <div className="space-y-1 text-left">
+              <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-2">
+                <h3 className="font-display font-bold text-base text-white uppercase tracking-tight">Marc Johnson Charles</h3>
+                <span className="text-2xs text-brand-cyan font-mono uppercase tracking-widest font-semibold">Spécialiste externe</span>
               </div>
               <p className="text-xs text-white/85 leading-relaxed max-w-xl">
-                <strong>Comité consultatif externe :</strong> En complément des co-fondateurs, Axis Result Consulting s'appuie sur un facilitateur externe jouant un rôle de conseil stratégique neutre, garant de la rigueur de nos engagements d'éthique et de transparence.
+                Fait le pont vers les marchés internationaux pour ancrer le positionnement d'Axis au-delà d'Haïti, et veiller à la cohérence de nos engagements d'excellence.
               </p>
             </div>
           </div>
