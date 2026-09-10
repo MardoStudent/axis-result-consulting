@@ -52,7 +52,7 @@ export default function AboutView() {
           Bâtir la performance par une démarche rigoureuse
         </h1>
         <p className="text-sm sm:text-base text-brand-navy/70 leading-relaxed">
-          Axis Result Consulting est une firme de services professionnels multidisciplinaires basée à Port-au-Prince. Nous accompagnons nos partenaires de l'expression du besoin jusqu'à la pérennisation des livrables.
+          Axis Result Consulting est une firme de services professionnels multidisciplinaires basée à Port-au-Prince, ouverte à l'international. Nous accompagnons nos partenaires, en Haïti comme au-delà, de l'expression du besoin jusqu'à la pérennisation des livrables.
         </p>
       </div>
 
@@ -112,7 +112,7 @@ export default function AboutView() {
             <div className="space-y-3">
               <h2 className="font-display font-bold text-xl text-brand-navy uppercase tracking-tight">Notre Vision</h2>
               <p className="text-brand-navy/70 leading-relaxed text-xs sm:text-sm">
-                Devenir la référence en Haïti pour la rigueur d'exécution opérationnelle et la qualité méthodologique des livrables. Nous croyons en la <span className="font-bold text-brand-navy border-b border-brand-cyan/30">progressivité</span> : une structure légère et adaptative qui se fortifie en fonction de la valeur concrète apportée sur le terrain.
+                Devenir une référence, en Haïti comme à l'international, pour la rigueur d'exécution opérationnelle et la qualité méthodologique des livrables. Nous croyons en la <span className="font-bold text-brand-navy border-b border-brand-cyan/30">progressivité</span> : une structure légère et adaptative qui se fortifie en fonction de la valeur concrète apportée sur le terrain.
               </p>
             </div>
           </div>

@@ -502,7 +502,7 @@ export default function ContactView() {
           <div className="space-y-6 relative z-10 text-left">
             <h2 className="font-display font-extrabold text-2xl uppercase tracking-tight">Coordonnées de la Firme</h2>
             <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
-              Nous intervenons prioritairement dans l'aire métropolitaine de Port-au-Prince et en province pour des missions de restructuration ou de transformation numérique.
+              Basés à Port-au-Prince, nous intervenons partout en Haïti (aire métropolitaine et province) et, à distance, pour des mandats internationaux et externalisés.
             </p>
           </div>
 

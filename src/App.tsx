@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 import { 
   ArrowRight, BarChart2, Laptop, Target, Award, CheckCircle2, 
-  ChevronRight, Users, Shield, Clock, Activity, HelpCircle, Send, Star 
+  ChevronRight, Users, Shield, Clock, Activity, HelpCircle, Send, Star, Globe
 } from 'lucide-react';
 import { motion, AnimatePresence, type Variants } from 'motion/react';
 import Navigation from './components/Navigation';
@@ -125,7 +125,7 @@ export default function App() {
               transition={{ delay: 0.2, type: 'spring', stiffness: 150, damping: 15 }}
               className="text-sm sm:text-lg text-brand-navy/70 max-w-2xl mx-auto leading-relaxed"
             >
-              Nous aidons les <span className="font-bold text-brand-navy border-b-2 border-brand-cyan">PME haïtiennes</span> à structurer leur croissance, piloter leurs projets complexes, digitaliser leurs processus terrain et former leurs collaborateurs.
+              Nous accompagnons <span className="font-bold text-brand-navy border-b-2 border-brand-cyan">PME, Institutions, ONG et Porteurs de projets</span>, dans tous les secteurs, pour structurer leur croissance, piloter leurs projets, digitaliser leurs opérations et former leurs équipes.
             </motion.p>
           </div>
 
@@ -152,9 +152,18 @@ export default function App() {
             </motion.button>
           </div>
 
-          <div className="pt-6 text-3xs text-brand-navy/65 uppercase tracking-wider" id="hero-secondary-targets">
-            Accompagnement également adapté pour : Institutions publiques • Organisations de développement • Porteurs de projets
+          {/* Positionnement : ancrage local, ouverture internationale et multisectorielle */}
+          <div className="pt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-2xs text-brand-navy/65 uppercase tracking-wider font-bold" id="hero-positioning">
+            <span className="flex items-center gap-1.5">
+              <Globe className="h-3.5 w-3.5 text-brand-cyan-text" />
+              Ancrés en Haïti
+            </span>
+            <span className="text-brand-navy/25" aria-hidden="true">•</span>
+            <span>Ouverts à l'international</span>
+            <span className="text-brand-navy/25" aria-hidden="true">•</span>
+            <span>Tous secteurs d'activité</span>
           </div>
+
         </section>
 
         {/* PREUVE : réalisations réelles, placées haut — la preuve vend avant le process */}

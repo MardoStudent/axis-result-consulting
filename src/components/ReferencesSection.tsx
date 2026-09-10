@@ -117,7 +117,7 @@ export default function ReferencesSection() {
         </h2>
         <p className="text-brand-navy/70 text-xs sm:text-sm leading-relaxed">
           Des missions réelles, du secteur privé au développement communautaire.
-          Par respect de nos clients privés, leur identité reste confidentielle —
+          Par respect de nos clients privés, leur identité reste confidentielle :
           les références détaillées sont communiquées sur demande, avec leur accord.
         </p>
       </div>

@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { Menu, X, LayoutDashboard, Send, HelpCircle, Users, Activity, FileText, ChevronRight } from 'lucide-react';
+import { Menu, X, LayoutDashboard, Send, HelpCircle, Users, Activity, ChevronRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { ActiveTab } from '../types';
 
@@ -16,8 +16,9 @@ interface NavigationProps {
 export default function Navigation({ activeTab, setActiveTab }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // « Accueil » n'est volontairement PAS dans le menu : le logo (en-tête collant,
+  // présent sur toutes les vues) est l'affordance de retour à l'accueil.
   const navItems = [
-    { id: 'home' as ActiveTab, label: 'Accueil', icon: FileText },
     { id: 'about' as ActiveTab, label: 'À Propos', icon: Users },
     { id: 'services' as ActiveTab, label: 'Pôles de Services', icon: Activity },
     { id: 'methodology' as ActiveTab, label: 'Méthodologie', icon: HelpCircle },

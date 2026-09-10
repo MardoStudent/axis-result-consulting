@@ -133,7 +133,7 @@ export default function ServicesView({ setActiveTab }: ServicesViewProps) {
           Nos Quatre Pôles de Services à Égalité de Visibilité
         </h1>
         <p className="text-brand-navy/70 text-sm sm:text-base leading-relaxed">
-          Pour une structure multidisciplinaire agile, nous intervenons à tous les niveaux opérationnels des PME et organisations haïtiennes à travers des pôles complémentaires conçus pour agir en synergie.
+          Pour une structure multidisciplinaire agile, nous intervenons à tous les niveaux opérationnels des organisations (en Haïti comme à l'international, dans tous les secteurs) à travers des pôles complémentaires conçus pour agir en synergie.
         </p>
       </div>
 
