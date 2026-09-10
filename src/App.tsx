@@ -15,6 +15,7 @@ import ServicesView from './components/ServicesView';
 import MethodologyView from './components/MethodologyView';
 import ContactView from './components/ContactView';
 import DashboardView from './components/DashboardView';
+import ReferencesSection from './components/ReferencesSection';
 import { ActiveTab, SERVICE_POLES } from './types';
 
 export default function App() {
@@ -155,6 +156,9 @@ export default function App() {
             Accompagnement également adapté pour : Institutions publiques • Organisations de développement • Porteurs de projets
           </div>
         </section>
+
+        {/* PREUVE : réalisations réelles, placées haut — la preuve vend avant le process */}
+        <ReferencesSection />
 
         {/* 4 POLES AT EQUAL WEIGHT OVERVIEW GRID WITH THEMATIC CORRESPONDING DESIGN STYLES */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12" id="home-poles-section">

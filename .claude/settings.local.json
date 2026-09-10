@@ -18,7 +18,9 @@
       "Bash(sed -i 's#<h4 #<h3 #g; s#</h4>#</h3>#g' src/components/MethodologyView.tsx)",
       "Bash(sed -i 's#<h3 #<h2 #g; s#</h3>#</h2>#g; s#<h4 #<h3 #g; s#</h4>#</h3>#g' src/components/DashboardView.tsx)",
       "Bash(sed -i 's#<h4 #<h3 #g; s#</h4>#</h3>#g' src/components/AboutView.tsx)",
-      "Bash(sed -i 's#<h4 #<h3 #g; s#</h4>#</h3>#g' src/components/ServicesView.tsx)"
+      "Bash(sed -i 's#<h4 #<h3 #g; s#</h4>#</h3>#g' src/components/ServicesView.tsx)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
     ]
   }
 }
