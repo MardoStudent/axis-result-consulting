@@ -87,16 +87,15 @@ export interface SimulatedProject {
 }
 
 // STATIC DATA
-// Équipe réelle d'Axis. NB : « Joseph Mardochée » est déduit — confirme
-// l'orthographe et le nom affiché ; complète le nom de famille de Hervens.
+// Équipe réelle d'Axis.
 export const CO_FOUNDERS: CoFounder[] = [
   {
     id: 'founder-1',
-    name: 'Joseph Mardochée',
-    role: 'Fondateur — Vision & Direction',
+    name: 'Mardochée Joseph',
+    role: 'Fondateur · Vision & Direction',
     bio: "Donne le ton et la direction d'Axis : cadrage stratégique des missions, exigence de résultats et cohérence de l'ensemble.",
     specialties: ['Vision & Stratégie', 'Direction des missions', 'Orientation résultats'],
-    initials: 'JM'
+    initials: 'MJ'
   },
   {
     id: 'founder-2',
@@ -108,11 +107,11 @@ export const CO_FOUNDERS: CoFounder[] = [
   },
   {
     id: 'founder-3',
-    name: 'Hervens',
+    name: 'Hervens Pierre',
     role: 'Marketing & Image de Marque',
     bio: "Façonne l'image, le récit et le positionnement de marque d'Axis comme de ceux qu'elle accompagne.",
     specialties: ['Marketing', 'Branding', 'Communication'],
-    initials: 'H'
+    initials: 'HP'
   }
 ];
 

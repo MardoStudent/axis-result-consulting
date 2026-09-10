@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Shield, Target, Eye, Award, CheckCircle2, Star, Briefcase } from 'lucide-react';
+import { Shield, Target, Eye, Award, CheckCircle2, Star, Briefcase, GraduationCap, Users } from 'lucide-react';
 import { motion } from 'motion/react';
 import { CO_FOUNDERS } from '../types';
 
@@ -162,7 +162,7 @@ export default function AboutView() {
             <span className="text-brand-cyan font-bold text-xs tracking-widest uppercase block">Les femmes et hommes derrière Axis</span>
             <h2 className="font-display font-extrabold text-3xl sm:text-4xl uppercase tracking-tight">L'Équipe</h2>
             <p className="text-white/70 text-xs sm:text-sm">
-              Un noyau resserré et complémentaire : une direction qui donne le ton, un garant du cadre méthodologique et une expertise marque — appuyés par un spécialiste externe des marchés internationaux.
+              Les visionnaires qui portent Axis et donnent le cap : une direction qui donne le ton, un garant du cadre méthodologique et une expertise marque, appuyés par un spécialiste externe des marchés internationaux. Derrière eux, un réseau mobilisé sur mesure exécute et accompagne sur le terrain.
             </p>
           </div>
 
@@ -204,8 +204,8 @@ export default function AboutView() {
           </div>
 
           <div className="bg-white/5 p-6 rounded-2xl border border-white/5 flex flex-col sm:flex-row items-center gap-5" id="governance-framework-info">
-            <div className="h-14 w-14 rounded-2xl bg-brand-cyan text-brand-navy font-display font-extrabold text-lg flex items-center justify-center flex-shrink-0 shadow-xs">
-              MJ
+            <div className="h-14 w-14 rounded-2xl bg-brand-cyan text-brand-navy font-display font-extrabold text-base flex items-center justify-center flex-shrink-0 shadow-xs">
+              MJC
             </div>
             <div className="space-y-1 text-left">
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-2">
@@ -215,6 +215,35 @@ export default function AboutView() {
               <p className="text-xs text-white/85 leading-relaxed max-w-xl">
                 Fait le pont vers les marchés internationaux pour ancrer le positionnement d'Axis au-delà d'Haïti, et veiller à la cohérence de nos engagements d'excellence.
               </p>
+            </div>
+          </div>
+
+          {/* Réseau d'exécution — la capacité qui s'étoffe à la demande */}
+          <div className="bg-white/5 rounded-2xl border border-white/10 p-6 sm:p-8 space-y-5" id="delivery-network">
+            <div className="space-y-1 text-left">
+              <span className="text-brand-cyan text-2xs font-mono font-bold uppercase tracking-widest block">Une capacité qui s'étoffe à la demande</span>
+              <h3 className="font-display font-bold text-xl text-white uppercase tracking-tight">Un réseau mobilisé sur mesure</h3>
+              <p className="text-xs sm:text-sm text-white/75 leading-relaxed max-w-2xl pt-1">
+                Les visionnaires donnent le cap. Pour le travail et l'accompagnement sur le terrain, Axis mobilise un réseau constitué au besoin de chaque mission :
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {[
+                { icon: GraduationCap, label: 'Masterants', desc: 'Analyse, recherche et production, au plus près de la donnée.' },
+                { icon: Users, label: 'Consultants', desc: 'Pilotage et exécution des missions sur le terrain.' },
+                { icon: Briefcase, label: 'Spécialistes métiers', desc: 'Expertises pointues mobilisées selon le besoin.' }
+              ].map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div key={idx} className="bg-white/5 rounded-xl border border-white/10 p-4 space-y-2 text-left">
+                    <div className="p-2 bg-brand-cyan/20 rounded-lg text-brand-cyan w-fit">
+                      <Icon className="h-4.5 w-4.5" />
+                    </div>
+                    <h4 className="font-display font-bold text-sm text-white uppercase tracking-tight">{item.label}</h4>
+                    <p className="text-3xs text-white/65 leading-relaxed">{item.desc}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
