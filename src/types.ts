@@ -5,7 +5,7 @@
 
 import { Shield, Target, Award, Users, FileText, Landmark } from 'lucide-react';
 
-export type ActiveTab = 'home' | 'about' | 'services' | 'methodology' | 'contact' | 'dashboard';
+export type ActiveTab = 'home' | 'about' | 'services' | 'methodology' | 'contact';
 
 export interface CoFounder {
   id: string;
@@ -34,56 +34,6 @@ export interface MethodologyPhase {
   tools: string[];
   inputRequired: string;
   outputLivable: string;
-}
-
-// Interactive Project Simulation Types
-export interface SMARTGoal {
-  specific: string;
-  measurable: string;
-  achievable: string;
-  relevant: string;
-  timeBound: string;
-}
-
-export interface ProjectTask {
-  id: string;
-  title: string;
-  description: string;
-  column: 'todo' | 'in_progress' | 'review' | 'done';
-  priority: 'low' | 'medium' | 'high';
-  phase: number;
-  assignedTo: string;
-}
-
-export interface ProjectRisk {
-  id: string;
-  title: string;
-  probability: 1 | 2 | 3; // 1: Low, 2: Medium, 3: High
-  impact: 1 | 2 | 3;      // 1: Low, 2: Medium, 3: High
-  mitigation: string;
-}
-
-export interface RACIMatrixRow {
-  task: string;
-  director: 'R' | 'A' | 'C' | 'I' | '';
-  client: 'R' | 'A' | 'C' | 'I' | '';
-  consultant: 'R' | 'A' | 'C' | 'I' | '';
-  partner: 'R' | 'A' | 'C' | 'I' | '';
-}
-
-export interface SimulatedProject {
-  id: string;
-  name: string;
-  clientName: string;
-  sector: string;
-  startDate: string;
-  status: 'active' | 'completed' | 'on_hold';
-  progress: number; // 0 to 100
-  smartGoal: SMARTGoal;
-  risks: ProjectRisk[];
-  tasks: ProjectTask[];
-  raci: RACIMatrixRow[];
-  currentPhase: number; // 1 to 7
 }
 
 // STATIC DATA
@@ -261,94 +211,5 @@ export const METHODOLOGY_PHASES: MethodologyPhase[] = [
     tools: ['Questionnaire d\'impact', 'Tableau de suivi des KPI d\'adoption', 'Plan d\'amélioration continue'],
     inputRequired: 'Dossier de mission clôturé, recul de 1 à 3 mois sur l\'utilisation.',
     outputLivable: 'Rapport d\'évaluation d\'impact, fiche de retour d\'expérience (REX).'
-  }
-];
-
-export const INITIAL_SIMULATED_PROJECTS: SimulatedProject[] = [
-  {
-    id: 'p-1',
-    name: 'Restructuration Organisationnelle & Plan de Vente',
-    clientName: 'Sogepack S.A. (PME Industrielle)',
-    sector: 'Production & Packaging',
-    startDate: '12 mai 2026',
-    status: 'active',
-    progress: 58,
-    currentPhase: 4,
-    smartGoal: {
-      specific: 'Restructurer le pôle commercial et fluidifier la logistique de livraison.',
-      measurable: 'Réduire le temps moyen de livraison de 24h et augmenter la conversion de 15%.',
-      achievable: 'En redéployant 3 agents terrain vers la satisfaction client et en installant un outil de routage léger.',
-      relevant: 'Répond directement aux pertes de parts de marché constatées au T1.',
-      timeBound: 'Mise en œuvre finalisée d\'ici le 30 septembre 2026.'
-    },
-    risks: [
-      {
-        id: 'r-1',
-        title: 'Résistance des agents de livraison au changement d\'itinéraire',
-        probability: 3,
-        impact: 2,
-        mitigation: 'Co-conception des trajets avec eux (ateliers Learning & Development) et intéressement.'
-      },
-      {
-        id: 'r-2',
-        title: 'Retard de livraison du nouveau module informatique',
-        probability: 2,
-        impact: 3,
-        mitigation: 'Préparation d\'un plan de repli sur formulaires Excel structurés temporaires (Digital & Data).'
-      }
-    ],
-    tasks: [
-      { id: 't-1', title: 'Entretien exploratoire & diagnostic Sogepack', description: 'Analyser l\'historique des ventes', column: 'done', priority: 'high', phase: 1, assignedTo: 'Co-fondateur A' },
-      { id: 't-2', title: 'Signature de la note de cadrage Sogepack', description: 'Figer le périmètre de la logistique', column: 'done', priority: 'medium', phase: 2, assignedTo: 'Co-fondateur B' },
-      { id: 't-3', title: 'Création de l\'organigramme WBS logistique', description: 'Détailler les livrables par pôle', column: 'done', priority: 'high', phase: 3, assignedTo: 'Co-fondateur B' },
-      { id: 't-4', title: 'Atelier de modélisation de processus logistique', description: 'Dessiner le flux logistique futur', column: 'in_progress', priority: 'high', phase: 4, assignedTo: 'Co-fondateur B' },
-      { id: 't-5', title: 'Configuration du tableau de bord de livraison', description: 'Intégrer les indicateurs de ponctualité', column: 'todo', priority: 'medium', phase: 4, assignedTo: 'Co-fondateur C' },
-      { id: 't-6', title: 'Contrôle qualité de la charte de processus', description: 'Relecture conjointe avant livraison client', column: 'todo', priority: 'medium', phase: 5, assignedTo: 'Co-fondateur A' }
-    ],
-    raci: [
-      { task: 'Diagnostic Sogepack', director: 'A', client: 'C', consultant: 'R', partner: 'I' },
-      { task: 'Note de Cadrage', director: 'R', client: 'A', consultant: 'R', partner: 'C' },
-      { task: 'Atelier de modélisation', director: 'C', client: 'R', consultant: 'A', partner: 'R' },
-      { task: 'Tableau de bord de livraison', director: 'I', client: 'C', consultant: 'R', partner: 'A' }
-    ]
-  },
-  {
-    id: 'p-2',
-    name: 'Digitalisation des Formulaires de Vente Terrain',
-    clientName: 'AgroDistrib Haiti (Secteur Commercial)',
-    sector: 'Distribution Agroalimentaire',
-    startDate: '2 juin 2026',
-    status: 'active',
-    progress: 85,
-    currentPhase: 5,
-    smartGoal: {
-      specific: 'Remplacer les bons de commande papier par une solution numérique hors-ligne.',
-      measurable: 'Éliminer 100% des erreurs de saisie manuelle et des pertes de feuilles.',
-      achievable: 'Utiliser un formulaire numérique KoboToolbox / GSheets synchronisé à un mini-dashboard.',
-      relevant: 'Permet une visibilité quotidienne des stocks et des encaissements en province.',
-      timeBound: 'Déploiement complet en 8 semaines, validé fin juillet 2026.'
-    },
-    risks: [
-      {
-        id: 'r-3',
-        title: 'Zones blanches de connectivité internet en province',
-        probability: 3,
-        impact: 3,
-        mitigation: 'Sélection d\'une application de collecte stockant en cache local (fonctionne 100% hors-ligne).'
-      }
-    ],
-    tasks: [
-      { id: 't-7', title: 'Qualification des besoins terrain', description: 'Établir la liste des données de vente obligatoires', column: 'done', priority: 'high', phase: 1, assignedTo: 'Co-fondateur C' },
-      { id: 't-8', title: 'Note de cadrage digitale co-signée', description: 'Figer les jalons de livraison des prototypes', column: 'done', priority: 'high', phase: 2, assignedTo: 'Co-fondateur C' },
-      { id: 't-9', title: 'Développement du prototype de formulaire', description: 'Créer les conditions de saisie intelligentes', column: 'done', priority: 'high', phase: 4, assignedTo: 'Co-fondateur C' },
-      { id: 't-10', title: 'Tests fonctionnels de validation', description: 'Lancer des simulations de saisie en conditions réelles', column: 'review', priority: 'high', phase: 5, assignedTo: 'Co-fondateur B' },
-      { id: 't-11', title: 'Session de formation des super-utilisateurs', description: 'Former 4 managers régionaux', column: 'todo', priority: 'medium', phase: 6, assignedTo: 'Co-fondateur C' }
-    ],
-    raci: [
-      { task: 'Qualification besoins', director: 'A', client: 'R', consultant: 'R', partner: 'I' },
-      { task: 'Note de cadrage', director: 'R', client: 'A', consultant: 'R', partner: 'C' },
-      { task: 'Développement prototype', director: 'I', client: 'C', consultant: 'R', partner: 'A' },
-      { task: 'Tests fonctionnels', director: 'C', client: 'R', consultant: 'A', partner: 'R' }
-    ]
   }
 ];

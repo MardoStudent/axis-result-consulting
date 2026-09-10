@@ -14,7 +14,6 @@ import AboutView from './components/AboutView';
 import ServicesView from './components/ServicesView';
 import MethodologyView from './components/MethodologyView';
 import ContactView from './components/ContactView';
-import DashboardView from './components/DashboardView';
 import ReferencesSection from './components/ReferencesSection';
 import { ActiveTab, SERVICE_POLES } from './types';
 
@@ -22,7 +21,7 @@ export default function App() {
   const [activeTab, setActiveTabState] = useState<ActiveTab>('home');
   const [direction, setDirection] = useState(0);
 
-  const tabOrder: ActiveTab[] = ['home', 'about', 'services', 'methodology', 'contact', 'dashboard'];
+  const tabOrder: ActiveTab[] = ['home', 'about', 'services', 'methodology', 'contact'];
 
   const setActiveTab = (tab: ActiveTab) => {
     const currentIndex = tabOrder.indexOf(activeTab);
@@ -87,8 +86,6 @@ export default function App() {
         return <MethodologyView setActiveTab={setActiveTab} />;
       case 'contact':
         return <ContactView />;
-      case 'dashboard':
-        return <DashboardView />;
       default:
         return renderHomeView();
     }
@@ -143,11 +140,11 @@ export default function App() {
             <motion.button
               whileHover={{ scale: 1.04, y: -2 }}
               whileTap={{ scale: 0.96 }}
-              id="hero-btn-simulation"
-              onClick={() => setActiveTab('dashboard')}
+              id="hero-btn-services"
+              onClick={() => setActiveTab('services')}
               className="w-full sm:w-auto bg-white border border-brand-gray/40 hover:border-brand-navy text-brand-navy px-8 py-4 rounded-2xl font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer shadow-xs"
             >
-              <span>Simuler un projet</span>
+              <span>Découvrir nos services</span>
               <ChevronRight className="h-4 w-4" />
             </motion.button>
           </div>
@@ -363,9 +360,8 @@ export default function App() {
         </AnimatePresence>
       </main>
 
-      {/* Standard professional footer - displayed on presentation tabs only */}
-      {activeTab !== 'dashboard' && (
-        <footer className="bg-brand-navy text-white border-t border-white/5 py-12 px-4 sm:px-6 lg:px-8" id="corporate-footer">
+      {/* Standard professional footer */}
+      <footer className="bg-brand-navy text-white border-t border-white/5 py-12 px-4 sm:px-6 lg:px-8" id="corporate-footer">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
@@ -397,7 +393,6 @@ export default function App() {
               <p className="font-display font-bold text-xs uppercase tracking-wider text-brand-cyan">L'Approche</p>
               <ul className="space-y-1.5 text-2xs text-white/60">
                 <li><button id="footer-link-methodology" onClick={() => setActiveTab('methodology')} className="hover:text-brand-cyan cursor-pointer text-left inline-block py-1.5">Les 7 Phases</button></li>
-                <li><button id="footer-link-dashboard" onClick={() => setActiveTab('dashboard')} className="hover:text-brand-cyan cursor-pointer text-left inline-block py-1.5">Simulateur de Pilotage</button></li>
                 <li><button id="footer-link-contact" onClick={() => setActiveTab('contact')} className="hover:text-brand-cyan cursor-pointer text-left inline-block py-1.5">Formulaire de Cadrage</button></li>
               </ul>
             </div>
@@ -420,7 +415,6 @@ export default function App() {
             </div>
           </div>
         </footer>
-      )}
     </div>
   );
 }

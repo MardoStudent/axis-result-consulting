@@ -127,11 +127,11 @@ export default function MethodologyView({ setActiveTab }: MethodologyViewProps) 
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              id="btn-methodology-activate-tool"
-              onClick={() => setActiveTab('dashboard')}
+              id="btn-methodology-contact"
+              onClick={() => setActiveTab('contact')}
               className="w-full sm:w-auto bg-brand-navy text-white hover:bg-brand-cyan hover:text-brand-navy text-2xs font-bold uppercase tracking-wider px-5 py-3.5 rounded-xl border border-brand-navy hover:border-brand-cyan transition-all cursor-pointer flex items-center justify-center gap-2"
             >
-              <span>Activer l'outil correspondant</span>
+              <span>Discuter de votre projet</span>
               <ArrowUpRight className="h-4 w-4" />
             </motion.button>
           </div>

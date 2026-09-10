@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { Target, BarChart2, Laptop, Award, ShieldAlert, ArrowRight, CheckCircle2, ChevronDown, RefreshCw, LayoutDashboard } from 'lucide-react';
+import { Target, BarChart2, Laptop, Award, ShieldAlert, ArrowRight, CheckCircle2, ChevronDown, RefreshCw } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { SERVICE_POLES, ServicePole, ActiveTab } from '../types';
 
@@ -210,11 +210,11 @@ export default function ServicesView({ setActiveTab }: ServicesViewProps) {
                 <motion.button
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  id={`btn-simulate-pole-${pole.id}`}
-                  onClick={() => setActiveTab('dashboard')}
+                  id={`btn-contact-pole-${pole.id}`}
+                  onClick={() => setActiveTab('contact')}
                   className="bg-brand-navy hover:bg-brand-cyan hover:text-brand-navy text-white text-2xs font-bold tracking-wider uppercase px-4 py-2.5 rounded-xl border border-brand-navy hover:border-brand-cyan transition-all flex items-center gap-1.5 cursor-pointer shadow-xs"
                 >
-                  <span>Simuler un outil</span>
+                  <span>Discuter de ce besoin</span>
                   <ArrowRight className="h-3.5 w-3.5" />
                 </motion.button>
               </div>
@@ -350,12 +350,12 @@ export default function ServicesView({ setActiveTab }: ServicesViewProps) {
                         <motion.button
                           whileHover={{ scale: 1.03 }}
                           whileTap={{ scale: 0.97 }}
-                          id="btn-diagnostic-go-dashboard"
-                          onClick={() => setActiveTab('dashboard')}
+                          id="btn-diagnostic-go-contact"
+                          onClick={() => setActiveTab('contact')}
                           className="bg-brand-navy text-white hover:bg-brand-cyan hover:text-brand-navy text-xs font-bold px-5 py-3.5 rounded-xl uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer border border-brand-navy"
                         >
-                          <LayoutDashboard className="h-4 w-4 text-brand-cyan" />
-                          Accéder à l'Espace Gestion
+                          <ArrowRight className="h-4 w-4 text-brand-cyan" />
+                          Prendre contact
                         </motion.button>
                         <button
                           id="btn-diagnostic-reset"

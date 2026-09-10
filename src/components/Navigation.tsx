@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { Menu, X, LayoutDashboard, Send, HelpCircle, Users, Activity, ChevronRight } from 'lucide-react';
+import { Menu, X, Send, HelpCircle, Users, Activity, ChevronRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { ActiveTab } from '../types';
 
@@ -22,7 +22,6 @@ export default function Navigation({ activeTab, setActiveTab }: NavigationProps)
     { id: 'about' as ActiveTab, label: 'À Propos', icon: Users },
     { id: 'services' as ActiveTab, label: 'Pôles de Services', icon: Activity },
     { id: 'methodology' as ActiveTab, label: 'Méthodologie', icon: HelpCircle },
-    { id: 'contact' as ActiveTab, label: 'Contact', icon: Send },
   ];
 
   const handleNavClick = (tabId: ActiveTab) => {
@@ -90,21 +89,21 @@ export default function Navigation({ activeTab, setActiveTab }: NavigationProps)
             })}
           </div>
 
-          {/* Action Call for the Simulation / Management Dashboard */}
-          <div className="hidden md:flex items-center" id="nav-dashboard-button-container">
+          {/* CTA principal : prise de contact */}
+          <div className="hidden md:flex items-center" id="nav-contact-button-container">
             <motion.button
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
-              id="nav-btn-dashboard"
-              onClick={() => handleNavClick('dashboard')}
+              id="nav-btn-contact"
+              onClick={() => handleNavClick('contact')}
               className={`px-4 py-2 rounded-xl text-[11px] font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2 cursor-pointer border ${
-                activeTab === 'dashboard'
+                activeTab === 'contact'
                   ? 'bg-brand-navy text-white border-brand-navy shadow-md shadow-brand-navy/10'
                   : 'bg-brand-cyan text-brand-navy border-brand-cyan hover:bg-brand-navy hover:text-white hover:border-brand-navy shadow-sm'
               }`}
             >
-              <LayoutDashboard className="h-3.5 w-3.5" />
-              Espace Gestion
+              <Send className="h-3.5 w-3.5" />
+              Prendre contact
               <ChevronRight className="h-3 w-3" />
             </motion.button>
           </div>
@@ -148,16 +147,16 @@ export default function Navigation({ activeTab, setActiveTab }: NavigationProps)
             })}
             <div className="pt-4 pb-2">
               <button
-                id="mobile-nav-item-dashboard"
-                onClick={() => handleNavClick('dashboard')}
+                id="mobile-nav-item-contact"
+                onClick={() => handleNavClick('contact')}
                 className={`w-full py-3 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer border ${
-                  activeTab === 'dashboard'
+                  activeTab === 'contact'
                     ? 'bg-brand-navy text-white border-brand-navy'
                     : 'bg-brand-cyan text-brand-navy border-brand-cyan hover:bg-brand-navy hover:text-white'
                 }`}
               >
-                <LayoutDashboard className="h-4 w-4" />
-                Espace Gestion de Projet
+                <Send className="h-4 w-4" />
+                Prendre contact
               </button>
             </div>
           </div>
