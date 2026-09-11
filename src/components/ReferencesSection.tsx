@@ -45,7 +45,7 @@ const REFERENCES: Reference[] = [
   {
     segment: 'ONG · Communication & développement',
     title: 'Une organisation de développement',
-    work: "Formation aux approches RCCE / C4D — communication des risques et engagement communautaire, au standard des acteurs humanitaires.",
+    work: "Formation aux approches RCCE / C4D : communication des risques et engagement communautaire, au standard des acteurs humanitaires.",
     result: 'Programme de formation en cours',
     status: 'en cours',
     stats: [{ value: '75', label: 'bénéficiaires formés' }],
@@ -64,8 +64,8 @@ const REFERENCES: Reference[] = [
   {
     segment: 'Impact communautaire · Éducation',
     title: 'Initiative « Vacances En Livre »',
-    work: "Structuration et coordination d'un grand rendez-vous communautaire autour du livre et de la lecture, porté par la jeunesse haïtienne — Axis en facilitateur de l'organisation.",
-    result: 'Réalisée — un succès communautaire',
+    work: "Structuration et coordination d'un grand rendez-vous communautaire autour du livre et de la lecture, porté par la jeunesse haïtienne, avec Axis en facilitateur de l'organisation.",
+    result: 'Réalisée : un succès communautaire',
     status: 'réalisé',
     stats: [
       { value: '3 000+', label: 'jeunes mobilisés' },

@@ -60,7 +60,7 @@ const SECTORS = [
 const UNDECIDED_POLE = {
   tagline: "Vous hésitez ? C'est exactement notre point de départ.",
   description:
-    "Notre entretien exploratoire gratuit (Phase 1) sert précisément à cela : nous qualifions votre besoin réel et vous orientons vers le pôle — ou la combinaison de pôles — le plus efficace pour votre situation. Aucun engagement à ce stade.",
+    "Notre entretien exploratoire gratuit (Phase 1) sert précisément à cela : nous qualifions votre besoin réel et vous orientons vers le pôle (ou la combinaison de pôles) le plus efficace pour votre situation. Aucun engagement à ce stade.",
   points: [
     'Diagnostic rapide de votre problématique',
     'Recommandation du pôle le plus pertinent',
@@ -126,7 +126,7 @@ export default function ContactView() {
           Accept: 'application/json'
         },
         body: JSON.stringify({
-          _subject: `Demande de cadrage — ${formData.companyName || formData.fullName} [${reference}]`,
+          _subject: `Demande de cadrage · ${formData.companyName || formData.fullName} [${reference}]`,
           _template: 'table',
           _replyto: formData.email,
           Référence: reference,
@@ -537,7 +537,7 @@ export default function ContactView() {
             <div className="space-y-3">
               <span className="text-[10px] uppercase font-bold text-white/50 flex items-center gap-1.5">
                 <WhatsAppIcon className="h-3.5 w-3.5 text-brand-green" />
-                Ligne d'assistance — Discutons sur WhatsApp
+                Ligne d'assistance · Discutons sur WhatsApp
               </span>
               <div className="space-y-2.5">
                 {WHATSAPP_LINES.map((line) => (
