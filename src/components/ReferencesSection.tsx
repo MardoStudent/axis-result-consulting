@@ -122,13 +122,15 @@ export default function ReferencesSection() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start" id="references-grid">
+      {/* Disposition en mosaïque (masonry) : les cartes gardent leur hauteur
+          naturelle et s'emboîtent, au lieu de laisser des vides. */}
+      <div className="columns-1 sm:columns-2 gap-6" id="references-grid">
         {REFERENCES.map((ref, idx) => (
           <motion.article
             key={idx}
             whileHover={{ y: -4 }}
             transition={{ type: 'spring', stiffness: 300, damping: 22 }}
-            className={`bg-white rounded-3xl border-y border-r border-brand-gray/15 border-l-4 ${accent[ref.color].bar} p-6 sm:p-7 shadow-xs flex flex-col justify-between space-y-4`}
+            className={`bg-white rounded-3xl border-y border-r border-brand-gray/15 border-l-4 ${accent[ref.color].bar} p-6 sm:p-7 shadow-xs flex flex-col space-y-4 mb-6 break-inside-avoid`}
             id={`reference-card-${idx}`}
           >
             <div className="space-y-3 text-left">
