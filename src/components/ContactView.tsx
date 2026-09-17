@@ -29,7 +29,7 @@ const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
 // Lignes WhatsApp. Indicatif Haïti : +509. wa.me exige le numéro au format
 // international, sans espace ni symbole.
 const WHATSAPP_LINES = [
-  { display: '+509 4194-6385', intl: '50941946385' },
+  { display: '+509 4713-5534', intl: '50947135534' },
   { display: '+509 4807-5039', intl: '50948075039' }
 ];
 const WHATSAPP_PREFILL = encodeURIComponent(
@@ -294,7 +294,7 @@ export default function ContactView() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+509 4194-6385"
+                    placeholder="+509 4713-5534"
                     className="w-full px-4 py-3 bg-brand-light border border-brand-navy/10 rounded-xl text-xs sm:text-sm focus:border-brand-cyan focus:outline-hidden transition-all shadow-2xs"
                   />
                 </div>
