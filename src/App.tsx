@@ -164,7 +164,7 @@ export default function App() {
         </section>
 
         {/* PREUVE : réalisations réelles, placées haut — la preuve vend avant le process */}
-        <ReferencesSection />
+        <ReferencesSection setActiveTab={setActiveTab} />
 
         {/* 4 POLES AT EQUAL WEIGHT OVERVIEW GRID WITH THEMATIC CORRESPONDING DESIGN STYLES */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12" id="home-poles-section">

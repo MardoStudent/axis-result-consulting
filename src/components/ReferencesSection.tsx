@@ -5,7 +5,20 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { CheckCircle2, ShieldCheck } from 'lucide-react';
+import { CheckCircle2, ShieldCheck, ArrowRight } from 'lucide-react';
+import { ActiveTab } from '../types';
+
+interface ReferencesSectionProps {
+  setActiveTab: (tab: ActiveTab) => void;
+}
+
+// Chiffres-clés agrégés (réels) affichés en tête de section.
+const KEY_STATS: { value: string; label: string }[] = [
+  { value: '3 000+', label: 'personnes touchées' },
+  { value: '75', label: 'bénéficiaires formés' },
+  { value: '6', label: 'partenaires institutionnels' },
+  { value: '4', label: "domaines d'intervention" }
+];
 
 interface Stat {
   value: string;
@@ -24,7 +37,7 @@ interface Reference {
   /** Chiffres forts, mis en avant (surtout pour VEL). */
   stats?: Stat[];
   /** Partenaires nommés (initiative publique uniquement). */
-  partners?: string;
+  partners?: string[];
   /** true = client confidentiel → mention « référence sur demande ». */
   confidential: boolean;
   color: 'cyan' | 'navy' | 'green';
@@ -71,7 +84,7 @@ const REFERENCES: Reference[] = [
       { value: '3 000+', label: 'jeunes mobilisés' },
       { value: '49', label: 'auteurs en signature' }
     ],
-    partners: "En partenariat avec la BRH, le FNE, la Direction Nationale du Livre (DNL), le Bureau Haïtien du Droit d'Auteur (BHDA), la Mairie de Delmas et le Rotaract Club de Delmas.",
+    partners: ['BRH', 'FNE', 'Direction Nationale du Livre (DNL)', "Bureau Haïtien du Droit d'Auteur (BHDA)", 'Mairie de Delmas', 'Rotaract Club de Delmas'],
     confidential: false,
     color: 'cyan'
   }
@@ -98,7 +111,7 @@ function StatusBadge({ status }: { status: Reference['status'] }) {
   );
 }
 
-export default function ReferencesSection() {
+export default function ReferencesSection({ setActiveTab }: ReferencesSectionProps) {
   return (
     <section
       className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12"
@@ -120,6 +133,23 @@ export default function ReferencesSection() {
           Par respect de nos clients privés, leur identité reste confidentielle :
           les références détaillées sont communiquées sur demande, avec leur accord.
         </p>
+      </div>
+
+      {/* A. Chiffres-clés : l'impact réel en un coup d'œil */}
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto" id="references-stats">
+        {KEY_STATS.map((s, i) => (
+          <div
+            key={i}
+            className="text-center bg-white rounded-2xl border-t-4 border-brand-cyan border-x border-b border-brand-gray/15 shadow-xs py-5 px-3"
+          >
+            <span className="font-display font-black text-3xl sm:text-4xl text-brand-navy block leading-none">
+              {s.value}
+            </span>
+            <span className="text-3xs uppercase tracking-wider text-brand-navy/60 font-bold mt-2 block">
+              {s.label}
+            </span>
+          </div>
+        ))}
       </div>
 
       {/* Disposition en mosaïque (masonry) : les cartes gardent leur hauteur
@@ -167,8 +197,23 @@ export default function ReferencesSection() {
                 <span className="text-xs font-bold text-brand-navy leading-snug">{ref.result}</span>
               </div>
 
+              {/* C. Partenaires institutionnels, en badges (rattachés à l'initiative) */}
               {ref.partners && (
-                <p className="text-3xs text-brand-navy/70 leading-relaxed italic">{ref.partners}</p>
+                <div className="space-y-2">
+                  <span className="text-3xs font-bold uppercase tracking-wider text-brand-navy/55 block">
+                    En partenariat avec
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {ref.partners.map((p, i) => (
+                      <span
+                        key={i}
+                        className="bg-brand-navy/5 text-brand-navy/80 border border-brand-navy/10 px-2.5 py-1 rounded-lg text-4xs font-bold uppercase tracking-wide"
+                      >
+                        {p}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               )}
 
               {ref.confidential && (
@@ -180,6 +225,21 @@ export default function ReferencesSection() {
             </div>
           </motion.article>
         ))}
+      </div>
+
+      {/* B. CTA de clôture : convertir juste après la preuve */}
+      <div className="text-center space-y-4 pt-2">
+        <p className="text-brand-navy/70 text-sm">Un projet en tête ? Parlons-en, sans engagement.</p>
+        <motion.button
+          whileHover={{ scale: 1.03, y: -2 }}
+          whileTap={{ scale: 0.97 }}
+          onClick={() => setActiveTab('contact')}
+          id="references-cta-contact"
+          className="bg-brand-navy text-white hover:bg-brand-cyan hover:text-brand-navy border border-brand-navy hover:border-brand-cyan transition-all font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-2xl inline-flex items-center gap-2 cursor-pointer shadow-md shadow-brand-navy/10"
+        >
+          <span>Prendre contact</span>
+          <ArrowRight className="h-4 w-4" />
+        </motion.button>
       </div>
     </section>
   );
